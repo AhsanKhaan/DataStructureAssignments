@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="HashArray_sep_chain">
+  <ClassDiagramComponents>
+    <Class name="HashArray_sep_chain" package="hasharray_sep_chain" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HashTable" package="hasharray_sep_chain" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="hashtable" type="LinkList[]" visibility="private"/>
+        <Field name="maxsize" type="int" visibility="private"/>
+        <Field name="currentsize" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="temp"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="insert" returnType="void" visibility="public">
+          <Argument type="int" name="key"/>
+        </Method>
+        <Method name="find" returnType="Node" visibility="public">
+          <Argument type="int" name="key"/>
+        </Method>
+        <Method name="hashfunction" returnType="int" visibility="public">
+          <Argument type="int" name="key"/>
+        </Method>
+        <Method name="display" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LinkList" package="hasharray_sep_chain" visibility="public" xPosition="522.0" yPosition="122.0">
+      <Fields>
+        <Field name="first" type="Node" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="isempty" returnType="boolean" visibility="public"/>
+        <Method name="insertAtFirst" returnType="void" visibility="public">
+          <Argument type="int" name="val"/>
+        </Method>
+        <Method name="append" returnType="void" visibility="public">
+          <Argument type="int" name="val"/>
+        </Method>
+        <Method name="deleteFirst" returnType="void" visibility="public"/>
+        <Method name="find" returnType="Node" visibility="public">
+          <Argument type="int" name="data"/>
+        </Method>
+        <Method name="insertAt" returnType="void" visibility="public">
+          <Argument type="int" name="pos"/>
+          <Argument type="int" name="placed"/>
+        </Method>
+        <Method name="displayList" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Node" package="hasharray_sep_chain" visibility="public" xPosition="238.0" yPosition="569.0">
+      <Fields>
+        <Field name="data" type="int" visibility="private"/>
+        <Field name="next" type="Node" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="inp"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getData" returnType="int" visibility="public"/>
+        <Method name="setData" returnType="void" visibility="public">
+          <Argument type="int" name="data"/>
+        </Method>
+        <Method name="getNode" returnType="Node" visibility="public"/>
+        <Method name="setNode" returnType="void" visibility="public">
+          <Argument type="Node" name="node"/>
+        </Method>
+        <Method name="display" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="hasharray_sep_chain.HashTable" target="hasharray_sep_chain.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="hasharray_sep_chain.Node" target="hasharray_sep_chain.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="first" source="hasharray_sep_chain.LinkList" target="hasharray_sep_chain.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="hasharray_sep_chain.LinkList" target="hasharray_sep_chain.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

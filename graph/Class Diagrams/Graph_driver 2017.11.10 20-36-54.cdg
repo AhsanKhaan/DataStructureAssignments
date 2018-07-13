@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Graph_driver">
+  <ClassDiagramComponents>
+    <Class name="Directedgraph" package="graph_driver" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="max_vertices" type="int" visibility="private"/>
+        <Field name="verticeslist" type="Vertex[]" visibility="private"/>
+        <Field name="adjancymatrix" type="int[][]" visibility="private"/>
+        <Field name="nvertices" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getverticeslist" returnType="Vertex[]" visibility="public"/>
+        <Method name="AddVertices" returnType="void" visibility="public">
+          <Argument type="char" name="vertex"/>
+        </Method>
+        <Method name="AddEdge" returnType="void" visibility="public">
+          <Argument type="int" name="start"/>
+          <Argument type="int" name="end"/>
+          <Argument type="int" name="weight"/>
+        </Method>
+        <Method name="displayvertex" returnType="void" visibility="public">
+          <Argument type="char" name="vertex"/>
+        </Method>
+        <Method name="displaymatrices" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Graph" package="graph_driver" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="max_vertices" type="int" visibility="private" isFinal="true"/>
+        <Field name="nvertices" type="int" visibility="private"/>
+        <Field name="adjancymatrix" type="int[][]" visibility="private"/>
+        <Field name="verticeslist" type="Vertex[]" visibility="private"/>
+        <Field name="thestack" type="StackX" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="AddVertices" returnType="void" visibility="public">
+          <Argument type="char" name="V"/>
+        </Method>
+        <Method name="addedge" returnType="void" visibility="public">
+          <Argument type="int" name="start"/>
+          <Argument type="int" name="end"/>
+        </Method>
+        <Method name="displayvertex" returnType="void" visibility="public">
+          <Argument type="int" name="vertex"/>
+        </Method>
+        <Method name="getAdjunvisitedmatrix" returnType="int" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="displaymatrix" returnType="void" visibility="public"/>
+        <Method name="dfs" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Graph_driver" package="graph_driver" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StackX" package="graph_driver" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="st" type="int[]" visibility="private"/>
+        <Field name="size" type="int" visibility="private" isFinal="true"/>
+        <Field name="top" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="int" name="val"/>
+        </Method>
+        <Method name="peek" returnType="int" visibility="public"/>
+        <Method name="pop" returnType="int" visibility="public"/>
+        <Method name="isEmphty" returnType="boolean" visibility="public"/>
+        <Method name="gettop" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vertex" package="graph_driver" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="label" type="char" visibility="private"/>
+        <Field name="wasvisited" type="boolean" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="char" name="lab"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getlabel" returnType="char" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="graph_driver.Directedgraph" target="graph_driver.Vertex" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="thestack" source="graph_driver.Graph" target="graph_driver.StackX" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
